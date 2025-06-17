@@ -1,0 +1,2 @@
+[console_scripts]
+fiber-run = main:cli

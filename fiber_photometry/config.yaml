@@ -1,0 +1,43 @@
+# config.yaml
+# ===========
+
+# Path to your TDT block folder:
+BLOCKPATH: "C:/path/to/your/tdt/block"
+
+# Names of the photometry streams in that block:
+STREAM_SIG: "_465A"    # GCaMP channel
+STREAM_ISO: "_415A"    # isosbestic control
+
+# Names of your epoc/event stores:
+EPOC_LEVER: "Lv1_"     # lever-press TTL
+EPOC_LICK: "Rw1_"      # lick TTL
+
+# Preprocessing parameters:
+ARTIFACT_CUTOFF: 5.0   # drop first 5 seconds to avoid LED turn-on
+SMOOTH_WINDOW: 100     # samples for moving-average filter
+DOWNSAMPLE_FACTOR: 10  # block-average downsampling factor
+
+# Peri‐event window (seconds):
+PRE_WINDOW: 5.0
+POST_WINDOW: 10.0
+
+# Outlier thresholds:
+MAD_THRESHOLD: 4.0     # drop trials with any |z|>4
+PEAK_Z_THRESHOLD: 3.0  # drop trials with peak |z|>3
+
+# Bin‐width selection (AIC) parameters:
+AIC_MIN: 0.01
+AIC_MAX: 1.0
+AIC_N_BINS: 50
+
+# Denoising parameters:
+SIGNAL_ENERGY_CUTOFF: 0.90
+
+# Peak detection settings:
+PEAK_BASELINE_MAD: 2.5
+PEAK_PROMINENCE_MAD: 3.5
+PEAK_COLLAPSE_WINDOW: 0.15  # seconds
+
+# Lick‐bout grouping:
+BOUT_ILI: 1.5         # max interval (s) within a bout
+BOUT_MIN_LICKS: 2    # minimum licks per bout
